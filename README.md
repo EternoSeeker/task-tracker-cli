@@ -33,7 +33,7 @@ npm install mongoose commander dotenv
 MONGODB_URI=mongodb://localhost:27017/task-tracker
 ```
 
-3. Make it executable:
+3. Make it executable (if needed):
 ```bash
 chmod +x index.js
 ```
@@ -48,28 +48,34 @@ chmod +x index.js
 **Using it from CLI**:
 ```bash
 # Add task
-node index.mjs add "Complete project report"
+node index.mjs add <task-description>
 
 # List all tasks
 node index.mjs list
+
+# List in-progress tasks
+node index.mjs list todo
 
 # List done tasks
 node index.mjs list done
 
 # Update task description
-node index.mjs update 507f1f77bcf86cd799439011 "Updated description"
+node index.mjs update <task-id> <updated-description>
 
 # Delete task
-node index.mjs delete 507f1f77bcf86cd799439011
+node index.mjs delete <task-id>
 
 # Mark task as in-progress
-node index.mjs mark-in-progress 507f1f77bcf86cd799439011
+node index.mjs mark-in-progress <task-id>
 
 # Mark task as done
-node index.mjs mark-done 507f1f77bcf86cd799439011
+node index.mjs mark-done <task-id>
 ```
 ### To do
 
-- [ ] if user does not give the contents of the tasks when creating it, you should open up a text editor like git does
-- [ ] priority flag that is optional
-- [ ] due date flag that is optional 
+- [ ] give simple IDs to tasks so it becomes easier to refer to them
+- [ ] if user does not give the contents of the tasks when creating it, you should open up a text editor, then return back to the terminal when the user is done
+- [ ] priority flag that is optionally passed
+- [ ] due date flag that is optionally passed, can mention the number of days the task is due in
+- [ ] listing tasks by priority ( a flag for this as well passed to the list command)
+- [ ] listing tasks by due date ( a flag for this as well passed to the list command)
