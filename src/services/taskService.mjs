@@ -12,28 +12,28 @@ export const getAllTasks = async (status) => {
 };
 
 // Update Description
-export const updateTaskDescription = async (id, newDescription) => {
-  return await Task.findByIdAndUpdate(
-    id,
+export const updateTaskDescription = async (taskId, newDescription) => {
+  return await Task.findOneAndUpdate(
+    { taskId },
     { description: newDescription, updatedAt: Date.now() },
     { new: true }
   );
 };
 
 // Update Status
-export const updateTaskStatus = async (id, newStatus) => {
+export const updateTaskStatus = async (taskId, newStatus) => {
   if (!['todo', 'in-progress', 'done'].includes(newStatus)) {
     throw new Error('Invalid status');
   }
   
-  return await Task.findByIdAndUpdate(
-    id,
+  return await Task.findOneAndUpdate(
+    { taskId },
     { status: newStatus, updatedAt: Date.now() },
     { new: true }
   );
 };
 
 // Delete
-export const deleteTask = async (id) => {
-  return await Task.findByIdAndDelete(id);
+export const deleteTask = async (taskId) => {
+  return await Task.findOneAndDelete({ taskId });
 };

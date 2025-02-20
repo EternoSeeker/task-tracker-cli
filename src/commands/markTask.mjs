@@ -1,10 +1,10 @@
 import { updateTaskStatus } from '../services/taskService.mjs';
 import { disconnectDB } from '../config/db.mjs';
 
-const markTask = async (id, newStatus) => {
+const markTask = async (taskId, newStatus) => {
   try {
-    const task = await updateTaskStatus(id, newStatus);
-    console.log(`Task marked successfully (ID: ${task._id}, Status: ${task.status})`);
+    const task = await updateTaskStatus(taskId, newStatus);
+    console.log(`Task marked successfully (ID: ${task.taskId}, Status: ${task.status})`);
     await disconnectDB();
     process.exit(0);
   } catch (error) {

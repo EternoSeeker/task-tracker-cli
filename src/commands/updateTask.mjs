@@ -1,10 +1,10 @@
 import { updateTaskDescription } from '../services/taskService.mjs';
 import { disconnectDB } from '../config/db.mjs';
 
-const updateTask = async (id, newDescription) => {
+const updateTask = async (taskId, newDescription) => {
   try {
-    const task = await updateTaskDescription(id, newDescription);
-    console.log(`Task updated successfully (ID: ${task._id}, Description: ${task.description})`);
+    const task = await updateTaskDescription(taskId, newDescription);
+    console.log(`Task updated successfully (ID: ${task.taskId}, Description: ${task.description})`);
     await disconnectDB();
     process.exit(0);
   } catch (error) {

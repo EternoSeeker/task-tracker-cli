@@ -5,18 +5,18 @@
 task-tracker-cli/
 ├── src/
 │   ├── commands/
-│   │   ├── addTask.js
-│   │   ├── listTasks.js
-│   │   ├── updateTask.js
-│   │   ├── deleteTask.js
-│   │   └── markTask.js
+│   │   ├── addTask.mjs
+│   │   ├── listTasks.mjs
+│   │   ├── updateTask.mjs
+│   │   ├── deleteTask.mjs
+│   │   └── markTask.mjs
 │   ├── config/
-│   │   └── db.js
+│   │   └── db.mjs
 │   ├── models/
-│   │   └── Task.js
+│   │   └── Task.mjs
 │   └── services/
-│       └── taskService.js
-├── index.js
+│       └── taskService.mjs
+├── index.mjs
 ├── package.json
 ├── .env
 └── README.md
@@ -35,7 +35,7 @@ MONGODB_URI=mongodb://localhost:27017/task-tracker
 
 3. Make it executable (if needed):
 ```bash
-chmod +x index.js
+chmod +x index.mjs
 ```
 
 **Key Flow Points**:

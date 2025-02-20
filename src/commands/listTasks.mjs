@@ -9,7 +9,7 @@ const listTasks = async (status) => {
     } else {
       console.log('Tasks retrieved successfully:');
       tasks.forEach(task => {
-        console.log(`ID: ${task._id}, Description: ${task.description}, Status: ${task.status}`);
+        console.log(`ID: ${task.taskId}, Description: ${task.description}, Status: ${task.status}`);
       });
     }
     await disconnectDB();
